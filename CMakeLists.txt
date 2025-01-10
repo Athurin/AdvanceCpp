@@ -26,8 +26,7 @@ set(CMAKE_CXX_STANDARD 11) #设置C++标准
 
 set(EXECUTABLE_OUTPUT_PATH "${CMAKE_BINARY_DIR}/bin")
 
-
-# set(EXCLUDE_DIRS ".git")
+set(EXCLUDE_DIRS ".git")
 
 
 # 获取当前路径
