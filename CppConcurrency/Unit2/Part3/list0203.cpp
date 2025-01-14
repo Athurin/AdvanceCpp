@@ -56,7 +56,7 @@ void f()
     thread_guard g(t);
         
     do_something_in_current_thread();
-}
+}//4
 
 int main()
 {
