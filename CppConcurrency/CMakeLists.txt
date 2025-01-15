@@ -4,4 +4,4 @@ add_subdirectory(Unit2/part3)
 add_subdirectory(Unit2/part4)
 add_subdirectory(Unit2/part5)
 add_subdirectory(Unit2/part6)
-
+add_subdirectory(Unit2/part7)
