@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.10)
+
+PROJECT(list0206)
+
+add_executable(${PROJECT_NAME} list0206.cpp)
