@@ -8,3 +8,4 @@ add_subdirectory(Unit2/part7)
 add_subdirectory(Unit2/part8)
 
 add_subdirectory(Unit3/part1)
+add_subdirectory(Unit3/part2)
