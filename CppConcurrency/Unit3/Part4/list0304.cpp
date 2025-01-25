@@ -1,4 +1,4 @@
-#include <exception>
+﻿#include <exception>
 #include <memory>
 
 struct empty_stack: std::exception
