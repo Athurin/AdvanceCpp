@@ -1,0 +1,5 @@
+add_subdirectory(QtByteArray)
+
+add_subdirectory(Test)
+
+
