@@ -103,7 +103,6 @@ Tips:
 
 **替换所有空白字符 `('\n', '\t', ' ', etc.) `为一个空格字符，使用 `simplified` **
 
-
 ## 查找
 
 查找字串出现的下标。
@@ -146,7 +145,6 @@ Found <b> tag at index position : 29
 Found <b> tag at index position : 11
 ```
 
-
 **顺序**
 
 ```cpp
@@ -171,7 +169,6 @@ std::cout << x.lastIndexOf(y, 6) << std::endl;        // returns 6      查找�
 std::cout << x.lastIndexOf(y, 5) << std::endl;        // returns 2      查找范围 crazy 
 std::cout << x.lastIndexOf(y, 1) << std::endl;        // returns -1     查找范围 cr
 ```
-
 
 ## 比较
 
@@ -212,12 +209,11 @@ std::cout << x.lastIndexOf(y, 1) << std::endl;        // returns -1     查找�
 
 ## 最大的Size() 和 内存不足的状况
 
-`QByteArray` 的最大长度不得大于 `2GB(2^31 bytes)。` 
+`QByteArray` 的最大长度不得大于 `2GB(2^31 bytes)。`
 
 当无法分配足够的内存时，会抛出一个异常 `std::bad_alloc `
 
 这个异常是整个Qt容器唯一可能会抛出的异常。
-
 
 ## 关于区域设置的说明
 
@@ -267,14 +263,13 @@ QByteArray comparison (A vs a): A < a
 QString comparison (A vs a): A < a
 ```
 
-
-#  Public Function
+# Public Function
 
 ## fromRawData(const char *data, intsize)
 
 这个方法构造的 `QByteArray` 对象是浅拷贝的，最初只是保存了一个首地址指针，所以它在做修改之前都是只读的，只是引用了原始对象的副本。
 
-一旦视图做出修改，就会出现写时复制，直到这时才会隐式地拷贝一份数据，并在拷贝地数据上做修改。
+一旦试图做出修改，就会出现写时复制，直到这时才会隐式地拷贝一份数据，并在拷贝地数据上做修改。
 
 ```cpp
 ]#ifndef __QTBYTEARRAY_H__
@@ -363,8 +358,6 @@ QByteArray ba1("ca\0r\0t");
   ba4.constData();                // Returns "ca\0r\0t" without terminating \0.
 ```
 
-
-
 ## 支持Base64编码
 
 里面有枚举类型，每一个枚举类型，都有不同的编码和解码的规则。
@@ -411,7 +404,6 @@ void Base64()
 * **`QByteArray::OmitTrailingEquals`** (值为 2)
   * 省略编码数据末尾的填充等号 `=`。
   * 这种选项适用于某些场景（如 URL 编码），其中填充字符 `=` 可能不被允许或需要被省略。
-
 
 示例1：
 
@@ -470,7 +462,7 @@ Decoded URL Base64 (With Padding): https://www.qt.io/=%/Hello+/World!/
 
 那究竟有什么区别，所谓的Url编码，并不是规避源字符串里面的 `+` 和 `/` ，而是在解码的时候规避。
 
-示例2：其余和示例1一样，源字符串加上 `?` ，这个字符的编码含有 `_` 
+示例2：其余和示例1一样，源字符串加上 `?` ，这个字符的编码含有 `_`
 
 ```cpp
 QByteArray data = "https://www.qt.io?/=%/Hello+?/World!?/";
@@ -491,3 +483,270 @@ Decoded URL Base64 (With Padding): https://www.qt.io?/=%/Hello+?/World!?/
 URL Base64 (No Padding): aHR0cHM6Ly93d3cucXQuaW8_Lz0lL0hlbGxvKz8vV29ybGQhPy8
 Decoded URL Base64 (With Padding): https://www.qt.io?/=%/Hello+?/World!?/
 ```
+
+**支持转移构造**
+
+创建一个指针指向一个已经存在的对象。
+
+**复制构造**
+
+时间复杂度是 `O(1) ` 因为 `QByteArray` 是隐式共享的。只有在修改时复制。
+
+**赋值构造**：
+
+`QByteArray(const char *data, int size = -1)`
+
+使用data的前size个字符做构造。如果 `data` 为空，那么就会构造 `Null Byte` 实例。
+
+如果 `size` < 0 那么就会复制 `data ` 复制里面的内容，直到遇上 `\0` .
+
+`\0` 并不认为是 `Byte Array ` 里面的一部分。
+
+对于 `const char *`总是深拷贝的，除非是 `fromRawData` 。
+
+> QByteArray makes a deep copy of the string data.
+
+**默认构造**
+
+> Constructs an empty byte array.
+
+**赋值号重载（右值）**
+
+`&QByteArray::operator=(QByteArray &&other)`
+
+转移资源所有权，避免深拷贝。
+
+返回引用是为了支持链式赋值、保持语义一致性和方便自赋值处理
+
+还有一点，直接返回的话，会发生隐式的拷贝构造函数。所以返回引用是最高效的。
+
+**赋值号重载（左值）**
+
+赋值后直接返回左值引用。
+
+### append
+
+有多种重载，根据不同的场景追加。
+
+### at
+
+**可以使用下标运算符 `[]` ，返回的是对元素的左值引用，可以读写对应的数据。**
+
+**还有一个选择就是，使用 `at()` 运算符，但是返回的是只读的。**
+
+`at()` 方法总是比 `[]` 快，是因为它从来不会导致深拷贝的发生。
+
+### back
+
+返回最后一个元素的值或者引用。
+
+对 `Empty Array` 而言会造成未定义行为。
+
+> Warning: Calling this function on an empty byte array constitutes undefined behavior.
+
+### begin
+
+返回指向第一个元素的迭代器。
+
+### capacity
+
+返回已经分配的内存空间的大小。
+
+### cbegin
+
+返回指向第一个元素的·***const***·迭代器。
+
+### cend
+
+返回指向最后一个元素的后一位（不存在）·***const***·迭代器。
+
+### chop
+
+移除末尾的n个字符。不返回任何值。若 n > 数组长度，那么直接变成 `empty byte array`
+
+这个操作是原地操作的，地址没有发生变化。
+
+```cpp
+//chop
+void fun_chop()
+{
+	QByteArray qstr = "hello\n!\n";
+	void* qstr_p = (void*)qstr.constData();
+	std::cout << qstr.constData() << std::endl; //内容
+	std::cout << qstr_p << std::endl;  //地址
+	qstr.chop(2);  //移除末尾两个字符
+	std::cout << qstr.constData() << std::endl; //内容
+	std::cout << qstr_p << std::endl;  //地址
+
+}
+```
+
+结果：
+
+```cpp
+hello
+!
+
+000002D981F20A38
+hello
+
+000002D981F20A38
+```
+
+### chopped
+
+不会原地修改，而是返回一个新的字符串。
+
+### truncate
+
+从 pos 之后截掉。如果 pos > size()-1，什么也不会发生。
+
+### clear
+
+> Clears the contents of the byte array and makes it null.
+
+### resize
+
+大于 size 就增加长度，新增的元素是未初始化的。
+
+小于就直接截取前面有用的。
+
+### right
+
+> Returns a byte array that contains the rightmost len bytes of this byte array.
+
+### rightJustified
+
+```cpp
+//rightJustified
+void fun_rightJustified()
+{
+	//size less than width
+	QByteArray q("apple");
+	void* q_p = (void*)q.constData();
+	QByteArray res = q.rightJustified(8, '#', true);  //true
+	void* res_p = (void*)res.constData();
+
+	std::cout << q.constData() << std::endl; //内容
+	std::cout << q_p << std::endl; //地址
+	std::cout << res.constData() << std::endl; //内容
+	std::cout << res_p << std::endl << std::endl; //地址
+
+
+
+	QByteArray p("apple");
+	void* pp = (void*)p.constData();
+	QByteArray resp = p.rightJustified(10, '*', false);  //true
+	void* res_pp = (void*)resp.constData();
+
+	std::cout << p.constData() << std::endl; //内容
+	std::cout << pp << std::endl; //地址
+	std::cout << resp.constData() << std::endl; //内容
+	std::cout << res_pp << std::endl << std::endl << std::endl; //地址
+
+
+
+	//size more than width
+	QByteArray q1("ABCgdiaydisadhoapple");
+	void* q_p1 = (void*)q1.constData();
+	QByteArray res1 = q1.rightJustified(8, '#', true);  //true
+	void* res_p1 = (void*)res1.constData();
+
+	std::cout << q1.constData() << std::endl; //内容
+	std::cout << q_p1 << std::endl; //地址
+	std::cout << res1.constData() << std::endl; //内容
+	std::cout << res_p1 << std::endl << std::endl; //地址
+
+
+
+	QByteArray p1("ABCgdiaydisadhoapple");
+	void* pp1 = (void*)p1.constData();
+	QByteArray resp1 = p1.rightJustified(10, '*', false);  //true
+	void* res_pp1 = (void*)resp1.constData();
+
+	std::cout << p1.constData() << std::endl; //内容
+	std::cout << pp1 << std::endl; //地址
+	std::cout << resp1.constData() << std::endl; //内容
+	std::cout << res_pp1 << std::endl; //地址
+
+}
+
+```
+
+```cpp
+apple
+000001D3D94C0C18
+###apple
+000001D3D94C0D98
+
+apple
+000001D3D94C0678
+*****apple
+000001D3D94C0978
+
+
+ABCgdiaydisadhoapple
+000001D3D94DE138
+ABCgdiay
+000001D3D94C0738
+
+ABCgdiaydisadhoapple
+000001D3D94DDB88
+ABCgdiaydisadhoapple
+000001D3D94DDB88
+```
+
+### setNum
+
+重置值 和 编码进制  .  十进制是默认的
+
+```cpp
+  QByteArray ba;
+  int n = 63;
+  ba.setNum(n);           // ba == "63" 
+  ba.setNum(n, 16);       // ba == "3f"
+```
+
+同理，浮点数也可以设置精度。
+
+### setRawData
+
+将 `const char *data ` 对象的前size个字节重置为 `QByteArray` 对象。不复制数据，只是使用一个 `data` 指针指向的内存中的前 `size` 个字节。
+
+调用者（即程序中的其他部分）必须保证在 `QByteArray` 对象及其任何未被修改的副本存在期间，`data` 指向的内存不会被释放或修改。
+
+```cpp
+//setRawData
+void fun_setRawData()
+{
+	char externalData[] = "Hello, World!";
+	int dataSize = sizeof(externalData) - 1; // 去掉结尾的空字符
+
+	QByteArray byteArray;
+	byteArray.setRawData(externalData, dataSize);
+	void* byteptr = (void*)byteArray.data();
+
+	// 现在，byteArray 包含 externalData 的前 dataSize 个字节
+	// 输出：Hello, World!
+	std::cout << "byteArray.constData()  " << byteArray.constData() << std::endl;  //值
+	 
+	std::cout << "(void*)externalData  " << (void*)externalData << std::endl;  //源地址
+	std::cout << "byteptr  " << byteptr << std::endl;   //data指针
+
+
+	// 注意：在 byteArray 存在期间，不要释放或修改 externalData
+}
+```
+
+前后地址不一样。。。？ （这里六个问题，官方文说不会发复制的）
+
+```cpp
+byteArray.constData()  Hello, World!
+(void*)externalData  00000050FD6FFD18
+byteptr  00000188A015DCD8
+```
+
+
+### shrink_to_fit
+
+将多余的内存去掉。

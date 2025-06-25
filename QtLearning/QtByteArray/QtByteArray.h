@@ -150,5 +150,95 @@ void Base64()
 
 }
 
+//chop
+void fun_chop()
+{
+	QByteArray qstr = "hello\n!\n";
+	void* qstr_p = (void*)qstr.constData();
+	std::cout << qstr.constData() << std::endl; //内容
+	std::cout << qstr_p << std::endl;  //地址
+	qstr.chop(2);  //移除末尾两个字符
+	std::cout << qstr.constData() << std::endl; //内容
+	std::cout << qstr_p << std::endl;  //地址
+
+}
+
+
+//rightJustified
+void fun_rightJustified()
+{
+	//size less than width
+	QByteArray q("apple");
+	void* q_p = (void*)q.constData();
+	QByteArray res = q.rightJustified(8, '#', true);  //true
+	void* res_p = (void*)res.constData();
+
+	std::cout << q.constData() << std::endl; //内容
+	std::cout << q_p << std::endl; //地址
+	std::cout << res.constData() << std::endl; //内容
+	std::cout << res_p << std::endl << std::endl; //地址
+
+
+
+	QByteArray p("apple");
+	void* pp = (void*)p.constData();
+	QByteArray resp = p.rightJustified(10, '*', false);  //true
+	void* res_pp = (void*)resp.constData();
+
+	std::cout << p.constData() << std::endl; //内容
+	std::cout << pp << std::endl; //地址
+	std::cout << resp.constData() << std::endl; //内容
+	std::cout << res_pp << std::endl << std::endl << std::endl; //地址
+
+
+
+	//size more than width
+	QByteArray q1("ABCgdiaydisadhoapple");
+	void* q_p1 = (void*)q1.constData();
+	QByteArray res1 = q1.rightJustified(8, '#', true);  //true
+	void* res_p1 = (void*)res1.constData();
+
+	std::cout << q1.constData() << std::endl; //内容
+	std::cout << q_p1 << std::endl; //地址
+	std::cout << res1.constData() << std::endl; //内容
+	std::cout << res_p1 << std::endl << std::endl; //地址
+
+
+
+	QByteArray p1("ABCgdiaydisadhoapple");
+	void* pp1 = (void*)p1.constData();
+	QByteArray resp1 = p1.rightJustified(10, '*', false);  //true
+	void* res_pp1 = (void*)resp1.constData();
+
+	std::cout << p1.constData() << std::endl; //内容
+	std::cout << pp1 << std::endl; //地址
+	std::cout << resp1.constData() << std::endl; //内容
+	std::cout << res_pp1 << std::endl; //地址
+	
+}
+
+//setRawData
+void fun_setRawData()
+{
+	char externalData[] = "Hello, World!";
+	int dataSize = sizeof(externalData) - 1; // 去掉结尾的空字符
+
+	QByteArray byteArray;
+	byteArray.setRawData(externalData, dataSize);
+	void* byteptr = (void*)byteArray.data();
+
+	// 现在，byteArray 包含 externalData 的前 dataSize 个字节
+	// 输出：Hello, World!
+	std::cout << "byteArray.constData()  " << byteArray.constData() << std::endl;  //值
+	 
+	std::cout << "(void*)externalData  " << (void*)externalData << std::endl;  //源地址
+	std::cout << "byteptr  " << byteptr << std::endl;   //data指针
+
+
+	// 注意：在 byteArray 存在期间，不要释放或修改 externalData
+}
+
+
+
 
 #endif

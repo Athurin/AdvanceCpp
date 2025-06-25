@@ -16,7 +16,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_MODULE_PATH ${QT_PATH}/lib/cmake)
 
 # 查找 Qt5 Core 组件
-find_package(Qt5 COMPONENTS Core REQUIRED)
+find_package(Qt5 COMPONENTS Core Sql REQUIRED)
 
 # 收集源文件
 file(GLOB CPP_FILES "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
@@ -26,7 +26,7 @@ file(GLOB HEADER_FILES "${CMAKE_CURRENT_SOURCE_DIR}/*.h")
 add_executable(${PROJECT_NAME} ${CPP_FILES} ${HEADER_FILES})
 
 # 链接 Qt5 Core 库
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Core)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Core Qt5::Sql)
 
 # 如果需要复制 DLL 文件到输出目录，可以使用下面的代码
 set(DLL_SOURCE_DIR D:/github_proj/advanceC++/MyThirdparty)

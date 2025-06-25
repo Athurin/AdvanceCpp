@@ -1,0 +1,213 @@
+{
+  "main": {
+    "id": "b836ae6041fc6087",
+    "type": "split",
+    "children": [
+      {
+        "id": "36322b37900b169a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4bac0461ea4523ff",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Base/编码转换.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "编码转换"
+            }
+          },
+          {
+            "id": "ff4e6f20205c443f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Base/配置文件.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "配置文件"
+            }
+          },
+          {
+            "id": "62bda41a9513c019",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "编译与静态分析.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "编译与静态分析"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2dba235065990490",
+    "type": "split",
+    "children": [
+      {
+        "id": "4dd285aa556b1b05",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d3f3f80dddd1aa6f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byModifiedTimeReverse",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "e8005eca8a16c802",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "ae294e1a099785b0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "490626e0d506a025",
+    "type": "split",
+    "children": [
+      {
+        "id": "4cff91da7494e72b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8755a5b05733930d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "编译与静态分析.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "编译与静态分析 的反向链接列表"
+            }
+          },
+          {
+            "id": "15d104a2c2c268a6",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "编译与静态分析.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "编译与静态分析 的出链列表"
+            }
+          },
+          {
+            "id": "0b27cf05b8fc8ef8",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "26c67ba178f8dcde",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "编译与静态分析.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "编译与静态分析 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "62bda41a9513c019",
+  "lastOpenFiles": [
+    "Base/配置文件.md",
+    "编译与静态分析.md",
+    "Base/编码转换.md",
+    "Base/确定值转换为泛型_toVariant.md",
+    "Base/program once 和 ifndef.md",
+    "Base/值类 value class.md",
+    "Base/可重入性和线程安全性.md",
+    "Base/常量指针和指针常量.md",
+    "Base",
+    "欢迎.md"
+  ]
+}
