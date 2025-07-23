@@ -1,4 +1,4 @@
-# QSqlDatabase 
+# QSqlDatabase
 
 提供了通过连接的方式去访问数据库的接口，一个 `QSqlDatabase` 的实例就象征着一个数据库的连接。
 
@@ -67,7 +67,7 @@ QSqlDatabase db = QSqlDatabase::database();
 
 如果建立了多个数据库的连接，每一个都使用单独的名字。
 
-> Use [database](qsqldatabase.html#database)() with a connection name to get that connection. 
+> Use [database](qsqldatabase.html#database)() with a connection name to get that connection.
 >
 > Use [removeDatabase](qsqldatabase.html#removeDatabase)() with a connection name to remove a connection.
 
@@ -83,7 +83,7 @@ QSqlDatabase db = QSqlDatabase::database();
 
 create a copy
 
-## 重载 = 
+## 重载 =
 
 assign
 
@@ -104,7 +104,7 @@ assign
 
 在使用连接之前，要记得初始化。
 
-> call some or all of 
+> call some or all of
 >
 > [setDatabaseName](qsqldatabase.html#setDatabaseName)(),  //2
 >
@@ -114,10 +114,12 @@ assign
 >
 > [setHostName](qsqldatabase.html#setHostName)(),   //1
 >
-> [setPort](qsqldatabase.html#setPort)(), 
+> [setPort](qsqldatabase.html#setPort)(),
 >
-> [setConnectOptions](qsqldatabase.html#setConnectOptions)(), 
+> [setConnectOptions](qsqldatabase.html#setConnectOptions)(),
 >
 > and, finally,
 >
 > [open](qsqldatabase.html#open)().  //5
+
+egl:

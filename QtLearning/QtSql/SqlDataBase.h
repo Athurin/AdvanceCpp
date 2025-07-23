@@ -3,6 +3,6 @@
 #include <QtCore/QString>
 #include <QtCore/QDebug>
 
-bool 
+bool
 connectCreate
-(const QString& conName, const QString& hostName, const QString& DBName, const QString& User, const QString& Password);
+(const QString SQLDiver, const QString conName, const QString hostName, const QString DBName, const QString User, const QString Password);

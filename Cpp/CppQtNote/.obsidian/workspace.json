@@ -49,8 +49,7 @@
               "title": "编译与静态分析"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -197,7 +196,7 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "62bda41a9513c019",
+  "active": "4bac0461ea4523ff",
   "lastOpenFiles": [
     "Base/配置文件.md",
     "编译与静态分析.md",

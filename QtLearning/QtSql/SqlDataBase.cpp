@@ -3,9 +3,9 @@
 //数据库连接的初始化
 bool 
 connectCreate
-(const QString& conName, const QString& hostName, const QString& DBName, const QString& User, const QString& Password )
+(const QString SQLDiver, const QString conName, const QString hostName, const QString DBName, const QString User, const QString Password )
 {
-	QSqlDatabase db = QSqlDatabase::addDatabase(conName); //static  "连接名
+	QSqlDatabase db = QSqlDatabase::addDatabase(SQLDiver, conName);
 	db.setHostName(hostName);
 	db.setDatabaseName(DBName);
 	db.setUserName(User);
