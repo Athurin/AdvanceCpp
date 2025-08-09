@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cpp/ptrdiff_t.md",
+                "file": "Base/visual studio代码提示为什么不默认用enter补全.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ptrdiff_t"
+              "title": "visual studio代码提示为什么不默认用enter补全"
             }
           },
           {
@@ -67,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": " ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -184,13 +184,16 @@
   },
   "active": "ff4e6f20205c443f",
   "lastOpenFiles": [
-    "Base/using还是typedef.md",
+    "Base/检查和修改C++标准.md",
+    "Base/查看编译器版本.md",
+    "cpp/tcc后缀、inl后缀.md",
+    "zpic/Snipaste_2025-08-09_15-49-28.png",
+    "zpic",
     "cpp/ptrdiff_t.md",
+    "Base/using还是typedef.md",
     "cpp",
     "Base/visual studio代码提示为什么不默认用enter补全.md",
-    "Base/检查和修改C++标准.md",
     "Base/断点不命中.md",
-    "Base/查看编译器版本.md",
     "Base/常量指针和指针常量.md",
     "Base/值类 value class.md",
     "Base/可重入性和线程安全性.md",

@@ -19,7 +19,7 @@ project(advanceCpp)  #添加当前项目名称
 
 
 set(CMAKE_CXX_STANDARD 11) #设置C++标准
-
+# set(CMAKE_CXX_STANDARD 20)
 
 
 # 设置输出目录为顶层 bin 文件夹
