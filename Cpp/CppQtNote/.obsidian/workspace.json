@@ -4,35 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "36322b37900b169a",
+        "id": "d9beadba6b36dc38",
         "type": "tabs",
         "children": [
           {
-            "id": "ff4e6f20205c443f",
+            "id": "964503d580532111",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Base/visual studio代码提示为什么不默认用enter补全.md",
+                "file": "cpp/new operator new placement new.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "visual studio代码提示为什么不默认用enter补全"
-            }
-          },
-          {
-            "id": "62bda41a9513c019",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "编译与静态分析.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "编译与静态分析"
+              "title": "new operator new placement new"
             }
           }
         ]
@@ -67,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": " ",
+                "query": "tag:#include",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -182,8 +168,11 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "ff4e6f20205c443f",
+  "active": "d3f3f80dddd1aa6f",
   "lastOpenFiles": [
+    "cpp/new operator new placement new.md",
+    "Base/解决cppreference无法搜索的问题.md",
+    "Base/visual studio代码提示为什么不默认用enter补全.md",
     "Base/检查和修改C++标准.md",
     "Base/查看编译器版本.md",
     "cpp/tcc后缀、inl后缀.md",
@@ -192,7 +181,6 @@
     "cpp/ptrdiff_t.md",
     "Base/using还是typedef.md",
     "cpp",
-    "Base/visual studio代码提示为什么不默认用enter补全.md",
     "Base/断点不命中.md",
     "Base/常量指针和指针常量.md",
     "Base/值类 value class.md",
