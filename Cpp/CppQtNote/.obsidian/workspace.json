@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "f05da119d85fa0d9",
+        "id": "09a8468afe6d0000",
         "type": "tabs",
         "children": [
           {
-            "id": "a6e84c0ae78a2bb8",
+            "id": "234aa81912ee70ce",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "cpp/模板特化，偏特化.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "模板特化，偏特化"
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "cpp/模板特化，偏特化.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "反向链接"
+              "title": "模板特化，偏特化 的反向链接列表"
             }
           },
           {
@@ -137,12 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "cpp/模板特化，偏特化.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "模板特化，偏特化 的大纲"
             }
           }
         ],
@@ -162,8 +168,9 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "a6e84c0ae78a2bb8",
+  "active": "234aa81912ee70ce",
   "lastOpenFiles": [
+    "cpp/模板特化，偏特化.md",
     "cpp/stl空间配置器.md",
     "zpic/Snipaste_2025-08-13_14-25-44.png",
     "zpic/Snipaste_2025-08-13_14-25-11.png",
