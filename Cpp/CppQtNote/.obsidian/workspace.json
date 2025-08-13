@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "d9beadba6b36dc38",
+        "id": "f05da119d85fa0d9",
         "type": "tabs",
         "children": [
           {
-            "id": "964503d580532111",
+            "id": "a6e84c0ae78a2bb8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cpp/new operator new placement new.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "new operator new placement new"
+              "title": "新标签页"
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "编译与静态分析.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "编译与静态分析 的反向链接列表"
+              "title": "反向链接"
             }
           },
           {
@@ -142,21 +137,20 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "编译与静态分析.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "编译与静态分析 的大纲"
+              "title": "大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -168,8 +162,12 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "d3f3f80dddd1aa6f",
+  "active": "a6e84c0ae78a2bb8",
   "lastOpenFiles": [
+    "cpp/stl空间配置器.md",
+    "zpic/Snipaste_2025-08-13_14-25-44.png",
+    "zpic/Snipaste_2025-08-13_14-25-11.png",
+    "zpic/Snipaste_2025-08-13_13-56-46.png",
     "cpp/new operator new placement new.md",
     "Base/解决cppreference无法搜索的问题.md",
     "Base/visual studio代码提示为什么不默认用enter补全.md",
