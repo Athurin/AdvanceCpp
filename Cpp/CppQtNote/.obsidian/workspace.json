@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "234aa81912ee70ce",
+            "id": "396e667cb2cce26d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cpp/模板特化，偏特化.md",
+                "file": "hunt/面试问题记录.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "模板特化，偏特化"
+              "title": "面试问题记录"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "cpp/模板特化，偏特化.md",
+                "file": "hunt/面试问题记录.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "模板特化，偏特化 的大纲"
+              "title": "面试问题记录 的大纲"
             }
           }
         ],
@@ -160,6 +160,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:创建新数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -168,20 +169,40 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "234aa81912ee70ce",
+  "active": "396e667cb2cce26d",
   "lastOpenFiles": [
+    "hunt/笔试套卷记录.md",
+    "hunt/面试问题记录.md",
+    "cpp/谈谈C++的左值右值，左右引用，移动语意及完美转发.md",
+    "cpp/什么时候使用右值.md",
+    "cpp/std move.md",
+    "cpp/auto会忽略顶层const限定符，这意味着如果初始化表达式是const类型，auto推导出的类型将不包含const限定符。 这句话是对的，怎么理解顶层和底层。.md",
+    "cpp/基类的虚析构函数会被派生类对象调用吗.md",
+    "cpp/虚函数与纯虚函数的区别.md",
+    "cpp/虚函数表.md",
+    "cpp/派生类继承方式.md",
+    "cpp/weak_ptr如何解决循环引用的问题.md",
+    "Base/可重入性和线程安全性.md",
+    "zpic/Pasted image 20250831122114.png",
+    "zpic/Pasted image 20250831122031.png",
+    "zpic/Pasted image 20250831121938.png",
+    "zpic/Pasted image 20250831121639.png",
+    "zpic/Pasted image 20250831121608.png",
+    "zpic/Pasted image 20250831120851.png",
+    "zpic/Pasted image 20250831120645.png",
+    "zpic/Pasted image 20250831120528.png",
+    "zpic/Pasted image 20250831120422.png",
+    "zpic/Pasted image 20250831120305.png",
     "cpp/模板特化，偏特化.md",
+    "未命名",
+    "hunt",
     "cpp/stl空间配置器.md",
-    "zpic/Snipaste_2025-08-13_14-25-44.png",
-    "zpic/Snipaste_2025-08-13_14-25-11.png",
-    "zpic/Snipaste_2025-08-13_13-56-46.png",
     "cpp/new operator new placement new.md",
     "Base/解决cppreference无法搜索的问题.md",
     "Base/visual studio代码提示为什么不默认用enter补全.md",
     "Base/检查和修改C++标准.md",
     "Base/查看编译器版本.md",
     "cpp/tcc后缀、inl后缀.md",
-    "zpic/Snipaste_2025-08-09_15-49-28.png",
     "zpic",
     "cpp/ptrdiff_t.md",
     "Base/using还是typedef.md",
@@ -189,13 +210,7 @@
     "Base/断点不命中.md",
     "Base/常量指针和指针常量.md",
     "Base/值类 value class.md",
-    "Base/可重入性和线程安全性.md",
     "Base/编译与静态分析.md",
-    "Base/配置文件.md",
-    "Base/编码转换.md",
-    "Base/确定值转换为泛型_toVariant.md",
-    "Base/program once 和 ifndef.md",
-    "Base",
-    "欢迎.md"
+    "Base"
   ]
 }
