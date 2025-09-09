@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "hunt/面试问题记录.md",
+                "file": "cpp/std string没有split库函数.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "面试问题记录"
+              "title": "std string没有split库函数"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "hunt/面试问题记录.md",
+                "file": "cpp/std string没有split库函数.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "面试问题记录 的大纲"
+              "title": "std string没有split库函数 的大纲"
             }
           }
         ],
@@ -171,8 +171,9 @@
   },
   "active": "396e667cb2cce26d",
   "lastOpenFiles": [
-    "hunt/笔试套卷记录.md",
     "hunt/面试问题记录.md",
+    "cpp/std string没有split库函数.md",
+    "hunt/笔试套卷记录.md",
     "cpp/谈谈C++的左值右值，左右引用，移动语意及完美转发.md",
     "cpp/什么时候使用右值.md",
     "cpp/std move.md",
@@ -210,7 +211,6 @@
     "Base/断点不命中.md",
     "Base/常量指针和指针常量.md",
     "Base/值类 value class.md",
-    "Base/编译与静态分析.md",
     "Base"
   ]
 }
