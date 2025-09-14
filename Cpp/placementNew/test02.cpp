@@ -1,6 +1,8 @@
 ﻿/*
 * 普通局部定义的对象 的内存管理是怎样的呢
 */
+
+/*
 #include <iostream>
 #include <new>
 
@@ -36,6 +38,8 @@ int main()
 
     return 0;
 }
+*/
+
 /*
 Constructor called with value: 66
 sizeof(MyClass): 4

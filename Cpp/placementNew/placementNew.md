@@ -302,6 +302,135 @@ obj.value: 66
 > - 栈内存 **要等所在作用域真正退出** 才随栈帧一起回收；
 > - 生命周期结束后继续读对象 = ** UB**，只是此刻“尸体”还没被踩烂，看起来仍完好。
 
+## test03.cpp:
 
+### new
+
+[operator new, operator new[] - cppreference.cn - C++参考手册](https://cppreference.cn/w/cpp/memory/new/operator_new#google_vignette)
+
+[operator new, operator new[] - cppreference.com](https://zh.cppreference.com/w/cpp/memory/new/operator_new)
+
+inline参考：[inline specifier - cppreference.com](https://en.cppreference.com/w/cpp/language/inline.html)          [inline 说明符 - cppreference.cn - C++参考手册](https://cppreference.cn/w/cpp/language/inline)
+
+内联函数或内联变量**(C++17 起)**具有以下属性
+
+* 内联函数或变量**(C++17 起)**的定义必须在访问它的翻译单元中可达（不一定在访问点之前）。
+* 具有[外部链接](https://cppreference.cn/w/cpp/language/storage_duration#external_linkage "cpp/language/storage duration")的内联函数或变量**(C++17 起)**（例如，未声明为**static**）具有以下附加属性
+* 程序中可以有内联函数或变量**(C++17 起)**的[多个定义](https://cppreference.cn/w/cpp/language/definition#One_Definition_Rule "cpp/language/definition")，只要每个定义出现在不同的翻译单元中，并且（对于非静态内联函数和变量**(C++17 起)**）所有定义都相同。例如，内联函数或内联变量**(C++17 起)**可以在头文件中定义，该头文件被包含在多个源文件中。
+* 它必须在每个翻译单元中都声明为**inline**。
+* 它在每个翻译单元中具有相同的地址。
+
+在一个内联函数中，
+
+* 所有函数定义中的函数局部静态对象在所有翻译单元之间共享（它们都引用在一个翻译单元中定义的同一个对象）。
+* 所有函数定义中定义的类型在所有翻译单元中也是相同的。
+
+但是，写 `inline` 是为了 **允许多次定义** ，而 `operator new` 必须 **全局唯一** ；
+标准因此 **强制禁止 inline** ，你必须把定义放到 **一个 `.cpp` 文件**里，让全程序只有一份实体。
+
+禁止inline的原因：
+
+| 原因                              | 说明                                                                                                            |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **ODR（一次定义规则）冲突** | `inline` 允许每个翻译单元都有一份定义；链接器试图合并时，<br />若不同单元里用户替换版本不一致 → 行为不可预测 |
+| **地址唯一性**              | 运行时全局只保留一份 `operator new` 指针；若多个 inline 副本存在，取地址会得到不同值，破坏全局唯一性          |
+| **动态库边界**              | inline 函数体被“复制”进每个 DLL/SO，替换版本可能在不同模块里行为不同，<br />导致跨模块分配/释放错配           |
+
+当 `operator new(std::size_t)` 无法分配到内存时，**必须**抛出 `std::bad_alloc` 异常；
+如果返回 `nullptr` 或者抛别的异常，就违反了标准，程序行为变成  **未定义（UB）** 。
+
+标准原文（[new.delete.single]/3）
+
+> *Required behavior* :
+> Return a non-null pointer to suitably aligned storage ([basic.align]), or **throw `std::bad_alloc`*.
+
+```cpp
+// no inline, required by [replacement.functions]/3
+void* operator new(std::size_t sz) //确保定义全局唯一，使用inline
+{
+    std::printf("1) new(size_t), size = %zu\n", sz);
+    if (sz == 0)
+        ++sz; // avoid std::malloc(0) which may return nullptr on success
+    //避免malloc(0)分配成功时返回nullptr
+
+    if (void* ptr = std::malloc(sz))
+        return ptr;
+
+    throw std::bad_alloc{}; // required by [new.delete.single]/3
+    //无论内存分配成功与否，都不会返回nullptr。
+    //创建一个 默认构造的临时对象（相当于 std::bad_alloc()）
+}
+```
+
+`operator new[]` 同理：
+
+```cpp
+// no inline, required by [replacement.functions]/3
+void* operator new[](std::size_t sz)
+{
+    std::printf("2) new[](size_t), size = %zu\n", sz);
+    if (sz == 0)
+        ++sz; // avoid std::malloc(0) which may return nullptr on success
+
+    if (void* ptr = std::malloc(sz))
+        return ptr;
+
+    throw std::bad_alloc{}; // required by [new.delete.single]/3
+}
+```
+
+### delete
+
+根据指针释放内存。
+
+```cpp
+void operator delete(void* ptr) noexcept
+{
+    std::puts("3) delete(void*)");
+    std::free(ptr);
+}
+```
+
+后面的实现都大同小异：
+
+```cpp
+void operator delete(void* ptr, std::size_t size) noexcept
+{
+    std::printf("4) delete(void*, size_t), size = %zu\n", size);
+    std::free(ptr);
+}
+
+void operator delete[](void* ptr) noexcept
+{
+    std::puts("5) delete[](void* ptr)");
+    std::free(ptr);
+}
+
+void operator delete[](void* ptr, std::size_t size) noexcept
+{
+    std::printf("6) delete[](void*, size_t), size = %zu\n", size);
+    std::free(ptr);
+}
+```
+
+调用和输出如下：
+
+```cpp
+int main()
+{
+    int* p1 = new int;
+    delete p1;
+
+    int* p2 = new int[10]; // guaranteed to call the replacement in C++11
+    delete[] p2;
+}
+
+/*
+1) new(size_t), size = 4
+4) delete(void*, size_t), size = 4
+2) new[](size_t), size = 40
+5) delete[](void* ptr)
+*/
+```
 
 end
