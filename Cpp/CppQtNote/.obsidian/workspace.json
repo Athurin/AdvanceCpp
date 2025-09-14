@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cpp/Cpp的类的内存布局.md",
+                "file": "cpp/通用工具库/size_t.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Cpp的类的内存布局"
+              "title": "size_t"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "cpp/Cpp的类的内存布局.md",
+                "file": "cpp/通用工具库/size_t.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Cpp的类的内存布局 的大纲"
+              "title": "size_t 的大纲"
             }
           }
         ],
@@ -171,10 +171,12 @@
   },
   "active": "396e667cb2cce26d",
   "lastOpenFiles": [
+    "cpp/Cpp的类的内存布局.md",
+    "cpp/通用工具库/size_t.md",
+    "cpp/通用工具库",
     "cpp/C语言不支持重载吗.md",
     "cpp/std move和std forward的区别.md",
     "cpp/虚函数与纯虚函数的区别.md",
-    "cpp/Cpp的类的内存布局.md",
     "cpp/C语言中没有继承的概念，结构体可以继承吗.md",
     "cpp/什么时候使用右值.md",
     "cpp/谈谈C++的左值右值，左右引用，移动语意及完美转发.md",
@@ -208,7 +210,6 @@
     "Base/解决cppreference无法搜索的问题.md",
     "Base/visual studio代码提示为什么不默认用enter补全.md",
     "Base/检查和修改C++标准.md",
-    "Base/查看编译器版本.md",
     "zpic",
     "cpp",
     "Base"

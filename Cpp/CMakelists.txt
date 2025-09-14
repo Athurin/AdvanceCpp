@@ -5,3 +5,5 @@ add_subdirectory(allocatorTest)
 add_subdirectory(placementNew)
 
 add_subdirectory(noexceptTest)
+
+add_subdirectory(size_tTest)
