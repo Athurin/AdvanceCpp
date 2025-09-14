@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cpp/std string没有split库函数.md",
+                "file": "cpp/Cpp的类的内存布局.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "std string没有split库函数"
+              "title": "Cpp的类的内存布局"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 349.5
   },
   "right": {
     "id": "490626e0d506a025",
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "cpp/std string没有split库函数.md",
+                "file": "cpp/Cpp的类的内存布局.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "std string没有split库函数 的大纲"
+              "title": "Cpp的类的内存布局 的大纲"
             }
           }
         ],
@@ -171,15 +171,21 @@
   },
   "active": "396e667cb2cce26d",
   "lastOpenFiles": [
-    "hunt/面试问题记录.md",
-    "cpp/std string没有split库函数.md",
-    "hunt/笔试套卷记录.md",
-    "cpp/谈谈C++的左值右值，左右引用，移动语意及完美转发.md",
+    "cpp/C语言不支持重载吗.md",
+    "cpp/std move和std forward的区别.md",
+    "cpp/虚函数与纯虚函数的区别.md",
+    "cpp/Cpp的类的内存布局.md",
+    "cpp/C语言中没有继承的概念，结构体可以继承吗.md",
     "cpp/什么时候使用右值.md",
+    "cpp/谈谈C++的左值右值，左右引用，移动语意及完美转发.md",
+    "hunt/笔试套卷记录.md",
+    "hunt/面试问题记录.md",
+    "cpp/对数组地址的理解.md",
+    "cpp/减少开机内存占用过高.md",
+    "cpp/std string没有split库函数.md",
     "cpp/std move.md",
     "cpp/auto会忽略顶层const限定符，这意味着如果初始化表达式是const类型，auto推导出的类型将不包含const限定符。 这句话是对的，怎么理解顶层和底层。.md",
     "cpp/基类的虚析构函数会被派生类对象调用吗.md",
-    "cpp/虚函数与纯虚函数的区别.md",
     "cpp/虚函数表.md",
     "cpp/派生类继承方式.md",
     "cpp/weak_ptr如何解决循环引用的问题.md",
@@ -203,14 +209,8 @@
     "Base/visual studio代码提示为什么不默认用enter补全.md",
     "Base/检查和修改C++标准.md",
     "Base/查看编译器版本.md",
-    "cpp/tcc后缀、inl后缀.md",
     "zpic",
-    "cpp/ptrdiff_t.md",
-    "Base/using还是typedef.md",
     "cpp",
-    "Base/断点不命中.md",
-    "Base/常量指针和指针常量.md",
-    "Base/值类 value class.md",
     "Base"
   ]
 }

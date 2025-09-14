@@ -3,3 +3,5 @@ add_subdirectory(defineLearn/defineLearn01)
 add_subdirectory(allocatorTest)
 
 add_subdirectory(placementNew)
+
+add_subdirectory(noexceptTest)
