@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cpp/为什么需要虚析构.md",
+                "file": "hunt/说一下http flv， rtmp， hls区别.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "为什么需要虚析构"
+              "title": "说一下http flv， rtmp， hls区别"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "cpp/为什么需要虚析构.md",
+                "file": "hunt/说一下http flv， rtmp， hls区别.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "为什么需要虚析构 的大纲"
+              "title": "说一下http flv， rtmp， hls区别 的大纲"
             }
           }
         ],
@@ -171,8 +171,14 @@
   },
   "active": "396e667cb2cce26d",
   "lastOpenFiles": [
-    "cpp/cpp文件和翻译单元是否等价.md",
+    "hunt/笔试套卷记录.md",
+    "hunt/说一下http flv， rtmp， hls区别.md",
+    "hunt/面试问题记录.md",
+    "cpp/页面置换淘汰算法还有哪些.md",
+    "cpp/操作系统进程调度算法都有哪些.md",
+    "cpp/写dfs的时候会因为迭代太多次而爆栈，怎么改用循环，使用C++.md",
     "cpp/为什么需要虚析构.md",
+    "cpp/cpp文件和翻译单元是否等价.md",
     "cpp/面试题：new了可以free吗.md",
     "cpp/inline.md",
     "cpp/size_t.md",
@@ -185,8 +191,6 @@
     "cpp/C语言中没有继承的概念，结构体可以继承吗.md",
     "cpp/什么时候使用右值.md",
     "cpp/谈谈C++的左值右值，左右引用，移动语意及完美转发.md",
-    "hunt/笔试套卷记录.md",
-    "hunt/面试问题记录.md",
     "cpp/对数组地址的理解.md",
     "cpp/减少开机内存占用过高.md",
     "cpp/std string没有split库函数.md",
@@ -194,9 +198,6 @@
     "cpp/auto会忽略顶层const限定符，这意味着如果初始化表达式是const类型，auto推导出的类型将不包含const限定符。 这句话是对的，怎么理解顶层和底层。.md",
     "cpp/基类的虚析构函数会被派生类对象调用吗.md",
     "cpp/虚函数表.md",
-    "cpp/派生类继承方式.md",
-    "cpp/weak_ptr如何解决循环引用的问题.md",
-    "Base/可重入性和线程安全性.md",
     "zpic/Pasted image 20250831122114.png",
     "zpic/Pasted image 20250831122031.png",
     "zpic/Pasted image 20250831121938.png",
@@ -207,7 +208,6 @@
     "zpic/Pasted image 20250831120528.png",
     "zpic/Pasted image 20250831120422.png",
     "zpic/Pasted image 20250831120305.png",
-    "cpp/模板特化，偏特化.md",
     "未命名",
     "hunt",
     "zpic",
